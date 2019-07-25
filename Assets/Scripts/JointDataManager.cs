@@ -14,8 +14,6 @@ public class JointDataManager : MonoBehaviour
 
     WebSocket ws;
 
-    HumanBodyBones bb;
-    Quaternion qq;
     // Start is called before the first frame update
     void Start()
     {
@@ -57,9 +55,7 @@ public class JointDataManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //ani_.GetBoneTransform(bb).rotation = qq;
-        //Debug.Log(qq);
-        //Debug.Log(bb.ToString());
+
     }
 
     private void OnDestroy()
