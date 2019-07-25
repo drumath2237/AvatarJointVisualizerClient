@@ -691,6 +691,7 @@ PlayerSettings:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
   cloudServicesEnabled:
+    Build: 1
     UNet: 1
   luminIcon:
     m_Name: 
@@ -711,10 +712,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: 4672fad7-c200-4942-92dd-c8fc6d4aca23
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: AvatorJointVisualizerClient
+  organizationId: drumath2237
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
