@@ -34,7 +34,7 @@ namespace GoogleARCore.Examples.HelloAR
     /// <summary>
     /// Controls the HelloAR example.
     /// </summary>
-    public class HelloARController : MonoBehaviour
+    public class MyARController : MonoBehaviour
     {
         /// <summary>
         /// The first-person camera being used to render the passthrough camera image (i.e. AR
@@ -48,9 +48,14 @@ namespace GoogleARCore.Examples.HelloAR
         public GameObject DetectedPlanePrefab;
 
         /// <summary>
-        /// A model to place when a raycast from a user touch hits a plane.
+        /// A model to place when a raycast from a user touch hits a vertical plane.
         /// </summary>
-        public GameObject AndyPlanePrefab;
+        public GameObject AndyVerticalPlanePrefab;
+
+        /// <summary>
+        /// A model to place when a raycast from a user touch hits a horizontal plane.
+        /// </summary>
+        public GameObject AndyHorizontalPlanePrefab;
 
         /// <summary>
         /// A model to place when a raycast from a user touch hits a feature point.
@@ -111,9 +116,21 @@ namespace GoogleARCore.Examples.HelloAR
                     {
                         prefab = AndyPointPrefab;
                     }
+                    else if (hit.Trackable is DetectedPlane)
+                    {
+                        DetectedPlane detectedPlane = hit.Trackable as DetectedPlane;
+                        if (detectedPlane.PlaneType == DetectedPlaneType.Vertical)
+                        {
+                            prefab = AndyVerticalPlanePrefab;
+                        }
+                        else
+                        {
+                            prefab = AndyHorizontalPlanePrefab;
+                        }
+                    }
                     else
                     {
-                        prefab = AndyPlanePrefab;
+                        prefab = AndyHorizontalPlanePrefab;
                     }
 
                     // Instantiate Andy model at the hit pose.
